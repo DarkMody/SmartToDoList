@@ -1,1 +1,1 @@
-const baseUrl = "http://localhost:5000";
+const baseUrl = "https://darklist.up.railway.app";
