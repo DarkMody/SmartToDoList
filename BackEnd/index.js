@@ -2,7 +2,7 @@ require("dotenv").config();
 const BaseUrl = "https://darklist.up.railway.app";
 const express = require("express");
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 const { connectDb } = require("./Data Base/db");
 const userController = require("./Controllers/userController");
 const taskController = require("./Controllers/taskController");
