@@ -1,5 +1,5 @@
 require("dotenv").config();
-const BaseUrl = "http://localhost:5000";
+const BaseUrl = "https://darklist.up.railway.app";
 const express = require("express");
 const app = express();
 const port = 5000;
