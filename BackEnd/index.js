@@ -16,7 +16,11 @@ const upload = multer({ storage: diskStorage, fileFilter });
 const schedule = require("node-schedule");
 const axios = require("axios");
 
-app.use(cors());
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PATCH", "DELETE"],
+  allowedHeaders: ["Content-Type", "authorization"]
+}));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(express.json()); // Middleware for body handling
 
