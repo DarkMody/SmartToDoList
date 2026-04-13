@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="Icons/to-do-list.png" />
+    <title>Dark List</title>
+  </head>
+  <body>
+    <audio id="mission-done" src="Sounds/Success 2.mp3"></audio>
+    <div id="main-container">
+      <nav>
+        <div id="menu">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div id="nav-container">
+          <div id="nav-logo">
+            <img src="Icons/to-do-list (3).png" alt="" />
+            <span class="nav-text">Dark List</span>
+          </div>
+          <ul id="nav-links">
+            <li id="profile">
+              <a href="profile.html"
+                ><img src="Icons/ura.jpg" alt="" class="nav-icon" />
+                <span class="nav-text">Profile</span></a
+              >
+            </li>
+            <li>
+              <a href="main.html"
+                ><img
+                  src="Icons/home.png"
+                  alt=""
+                  class="nav-icon"
+                  style="margin-left: 5px"
+                />
+                <span class="nav-text">Home</span></a
+              >
+            </li>
+          </ul>
+          <ul class="down">
+            <li id="notification">
+              <img src="Icons/bell.png" alt="" class="nav-icon" />
+              <span class="nav-text">Notifications</span>
+            </li>
+            <li id="logout">
+              <a href="index.html"
+                ><img
+                  src="Icons/logout.png"
+                  alt=""
+                  class="nav-icon"
+                  style="margin-left: 3px"
+                />
+                <span class="nav-text">Logout</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div id="tasks-container">
+        <button id="add">Add Task</button>
+        <h1>Tasks</h1>
+        <div id="tasks-list"></div>
+      </div>
+    </div>
+    <div id="add-task-overlay">
+      <div id="form">
+        <button id="add-cancel"><img src="Icons/clear.png" alt="" /></button>
+        <div>
+          <input type="text" id="add-title" placeholder="The Task" />
+          <input
+            type="number"
+            placeholder="Time To Finish (Minutes)"
+            id="add-time"
+          />
+        </div>
+        <div>
+          <textarea
+            id="add-description"
+            placeholder="The Description"
+          ></textarea>
+        </div>
+        <div>
+          <input type="date" id="add-deadline" />
+          <select name="priority" id="add-priority">
+            <option value="Very High">Very High</option>
+            <option value="High">High</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="low">Low</option>
+            <option value="Very Low">Very Low</option>
+          </select>
+        </div>
+        <button id="add-add-task">Add Task</button>
+      </div>
+    </div>
+    <div id="notification-overlay" style="display: none">
+      <button id="notification-cancel">
+        <img src="Icons/clear.png" alt="" />
+      </button>
+    </div>
+  </body>
+  <script src="JS/config.js"></script>
+  <script src="JS/apiHandling.js"></script>
+  <script src="JS/mainFn.js"></script>
+  <script src="JS/main.js"></script>
+</html>

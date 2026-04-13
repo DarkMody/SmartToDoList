@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/profile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="Icons/to-do-list.png" />
+    <title>Dark List</title>
+  </head>
+  <body>
+    <div id="main-container">
+      <nav>
+        <div id="menu">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div id="nav-container">
+          <div id="nav-logo">
+            <img src="Icons/to-do-list (3).png" alt="" />
+            <span class="nav-text">Dark List</span>
+          </div>
+          <ul id="nav-links">
+            <li id="profile">
+              <a href="profile.html"
+                ><img src="Icons/ura.jpg" alt="" class="nav-icon" />
+                <span class="nav-text">Profile</span></a
+              >
+            </li>
+            <li>
+              <a href="main.html"
+                ><img
+                  src="Icons/home.png"
+                  alt=""
+                  class="nav-icon"
+                  style="margin-left: 5px"
+                />
+                <span class="nav-text">Home</span></a
+              >
+            </li>
+          </ul>
+          <ul class="down">
+            <li id="notification">
+              <img src="Icons/bell.png" alt="" class="nav-icon" />
+              <span class="nav-text">Notifications</span>
+            </li>
+            <li id="logout">
+              <a href="index.html"
+                ><img
+                  src="Icons/logout.png"
+                  alt=""
+                  class="nav-icon"
+                  style="margin-left: 3px"
+                />
+                <span class="nav-text">Logout</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div id="details">
+        <div id="container">
+          <div id="left">
+            <input
+              type="text"
+              id="user-name"
+              value="Mahmoud Mohamed"
+              placeholder="Username"
+              disabled
+            />
+            <div id="btns">
+              <button id="edit" type="button">Edit</button>
+              <button id="delete" type="button">Delete Account</button>
+            </div>
+          </div>
+          <div id="right">
+            <img src="BackEnd/uploads/ura.jpg" alt="" id="profile-image" />
+            <input type="file" id="upload" disabled />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="notification-overlay" style="display: none">
+      <button id="notification-cancel">
+        <img src="Icons/clear.png" alt="" />
+      </button>
+    </div>
+  </body>
+  <script src="JS/config.js"></script>
+  <script src="JS/profileApiHandling.js"></script>
+  <script src="JS/profile.js"></script>
+</html>
