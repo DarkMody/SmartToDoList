@@ -164,7 +164,7 @@ async function notification() {
       not
         .querySelector(".notification-del")
         .addEventListener("click", async () => {
-          await apiDeleteNotification(not.id);
+          apiDeleteNotification(not.id);
           not.remove();
         });
     }
@@ -177,5 +177,3 @@ async function notification() {
     });
 }
 notification();
-
-function setNotification(not) {}
