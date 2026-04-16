@@ -6,7 +6,7 @@ edit.addEventListener("click", async () => {
   } else {
     const data = await apiEditUser();
     localStorage.setItem("token", data.data);
-    await dflt();
+    dflt();
     edit.innerHTML = "Edit";
     userName.disabled = true;
     uploadBtn.disabled = true;
@@ -14,7 +14,7 @@ edit.addEventListener("click", async () => {
 });
 del.addEventListener("click", async () => {
   if (confirm("Are you sure you want to delete account ?")) {
-    await apiDeleteUser();
+    apiDeleteUser();
     document.getElementById("logout").click();
   }
 });
@@ -114,7 +114,7 @@ async function notification() {
       not
         .querySelector(".notification-del")
         .addEventListener("click", async () => {
-          await apiDeleteNotification(not.id);
+          apiDeleteNotification(not.id);
           not.remove();
         });
     }
@@ -127,5 +127,3 @@ async function notification() {
     });
 }
 notification();
-
-function setNotification(not) {}
