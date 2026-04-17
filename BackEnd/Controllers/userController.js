@@ -71,14 +71,19 @@ const login = asyncWrapper(async (req, res, next) => {
 });
 
 const fastLogin = asyncWrapper(async (req, res, next) => {
-  const user = req.currentUser;
-  const token = await generateToken({
-    userName: user.userName,
-    email: user.email,
-    id: user.id,
-    avatar: user.avatar,
-  });
-  res.json({ status: httpStatusText.SUCCESS, data: token });
+  const user = User.findById(req.currentUser.id);
+  if (user) {
+    const token = await generateToken({
+      userName: user.userName,
+      email: user.email,
+      id: user._id,
+      avatar: user.avatar,
+    });
+    res.json({ status: httpStatusText.SUCCESS, data: token });
+  } else {
+    const error = appError.create("User Was Deleted", 400, httpStatusText.FAIL);
+    return next(error);
+  }
 });
 
 const deleteUser = asyncWrapper(async (req, res, next) => {
