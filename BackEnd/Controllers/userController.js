@@ -71,7 +71,7 @@ const login = asyncWrapper(async (req, res, next) => {
 });
 
 const fastLogin = asyncWrapper(async (req, res, next) => {
-  const user = User.findById(req.currentUser.id);
+  const user = await User.findById(req.currentUser.id);
   if (user) {
     const token = await generateToken({
       userName: user.userName,
